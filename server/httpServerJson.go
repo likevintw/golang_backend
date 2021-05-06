@@ -25,9 +25,10 @@ func (handler *HttpServerJson) ServeHTTP(w http.ResponseWriter, r *http.Request)
 		json.NewEncoder(w).Encode(response)
 		return
 	}
+
 	var dataJson public.ClientInfomationFormat
-	json.Unmarshal(dataString, &dataJson) // dataString is Byte Type
-	fmt.Println(dataJson)                 // json type
+	json.Unmarshal(dataString, &dataJson) // type byte to json
+	fmt.Println(dataJson)
 	fmt.Println(dataJson.Behavior)
 	fmt.Println(dataJson.Username)
 	fmt.Println(dataJson.Password)
